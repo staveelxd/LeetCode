@@ -1,10 +1,9 @@
 class Solution {
     public void reverseString(char[] s) {
-        int left = 0, right = s.length - 1;
-        while (left < right) {
-            char tmp = s[right];
-            s[right--] = s[left];
-            s[left++] = tmp;
+        for(int i = 0; i < s.length - i - 1; i++) {
+            char tmp = s[s.length - i - 1];
+            s[s.length - i - 1] = s[i];
+            s[i] = tmp;
         }
     }
 }
