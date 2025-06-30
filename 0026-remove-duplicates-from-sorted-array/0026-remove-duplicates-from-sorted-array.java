@@ -1,15 +1,13 @@
 class Solution {
     public int removeDuplicates(int[] nums) {
-        int dups = 0;
-        int curval = nums[0];
         int unique = 1;
-        for(int i = 1; i < nums.length; i++) {
-            if (nums[i] == curval) {
-                dups++;
+        int duplicates = 0;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] == nums[i - 1]) {
+                duplicates++;
             } else {
-                curval = nums[i];
+                nums[i - duplicates] = nums[i];
                 unique++;
-                nums[i - dups] = curval;
             }
         }
         return unique;
